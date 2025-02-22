@@ -22,11 +22,11 @@ The dataset includes the following features:
 The code is organized as follows:
 
 **src/:**
-- data_ingestion.py: Responsible for loading the raw data, splitting it into training and testing datasets, and saving it for subsequent steps in the machine learning pipeline.
+- data_ingestion.py: Loads raw data, splits it into training and testing sets, and saves them for use in the machine learning pipeline.
 
-- data_transformation.py: The Data Transformation process involves preprocessing the dataset by handling both numerical and categorical features. Numerical features are imputed with median values and standardized, while categorical features are imputed with the most frequent value, one-hot encoded, and then standardized all using pipeline method. The data transformation is applied to both training and testing datasets, and the preprocessed data is saved for further use in model training. The preprocessing pipeline is saved as a pickle file for deployment and future use.
+- data_transformation.py: Preprocesses numerical and categorical features using pipelines, applies transformations to both training and test data, and saves the preprocessing object for future use.
 
-- model_trainer.py: The Model Trainer component trains various regression models using ensemble technique (including Random Forest, Decision Tree, XGBoost, and CatBoost) using the provided training and testing data. It evaluates each model's performance and selects the best-performing model based on the R² score. The best model is then saved as a pickle file for later use in prediction tasks. The R² score of the best model on the test data is returned to assess its performance.
+- model_trainer.py: Trains and evaluates various regression models, selects the best-performing model based on R² score, and saves it for future predictions.
 
 **pipeline/:**
 prediction.py: Handles the prediction tasks based on the trained model.
@@ -64,19 +64,19 @@ Each folder in the project includes an __init__.py file, marking them as Python 
 python app.py
 
 **GitHub Actions**
-git status
-git add .
-git commit -m '<details>'
-git push -u origin main
+- git status
+- git add .
+- git commit -m '<details>'
+- git push -u origin main
 
 **Docker Local**
-docker build -t studentperformance-app .
-docker images
-docker run -p 5000:5000 studentperformance-app (when app.py running in 5000 port no)
+- docker build -t studentperformance-app .
+- docker images
+- docker run -p 5000:5000 studentperformance-app (when app.py running in 5000 port no)
 
 **Local port**
-http://127.0.0.1:5000/
-http://localhost:5000/
+- http://127.0.0.1:5000/
+- http://localhost:5000/
 
 ### Deployment Steps
 - Docker Build checked
