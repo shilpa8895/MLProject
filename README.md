@@ -58,4 +58,28 @@ Configures the package setup and installation requirements.
 **templates/:**
 Contains HTML files for the project’s frontend (e.g., for web applications).
 
-- Each folder in the project includes an __init__.py file, marking them as Python packages for modular organization. This allows easy imports of components 
+Each folder in the project includes an __init__.py file, marking them as Python packages for modular organization. This allows easy imports of components 
+
+**Run Code**
+python app.py
+
+**GitHub Actions**
+git status
+git add .
+git commit -m '<details>'
+git push -u origin main
+
+**Docker Local**
+docker build -t studentperformance-app .
+docker images
+docker run -p 5000:5000 studentperformance-app (when app.py running in 5000 port no)
+
+**Local port**
+http://127.0.0.1:5000/
+http://localhost:5000/
+
+### Deployment Steps
+- Docker Build checked
+- Github Workflow
+- Iam User In AWS
+- EC2 Instance
