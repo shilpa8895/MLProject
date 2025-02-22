@@ -17,45 +17,32 @@ The dataset includes the following features:
 - writing score\n
 - Math Score (target variable)
 
-#### Code Structure <details>
+#### Code Structure
 
 The code is organized as follows:
-
-**src/:**<details>
+**src/:**
 - data_ingestion.py: Loads raw data, splits it into training and testing sets, and saves them for use in the machine learning pipeline.
-
 - data_transformation.py: Preprocesses numerical and categorical features using pipelines, applies transformations to both training and test data, and saves the preprocessing object for future use.
-
 - model_trainer.py: Trains and evaluates various regression models, selects the best-performing model based on R² score, and saves it for future predictions.
-
-**pipeline/:**<details>
+**pipeline/:**
 prediction.py: Handles the prediction tasks based on the trained model.
-
-**artifacts/:**<details>
+**artifacts/:**
  Stores the trained model in .pkl format and the train,test and preprocessed data csv files for deployment.
-
-**app.py:**<details>
+**app.py:**
 The main entry point for the Flask application, running on port 8080.
-
-**Dockerfile:**<details>
+**Dockerfile:**
 Containerizes the application using Docker for easy deployment.
-
-**Github workflows:**<details>
+**Github workflows:**
 Contains CI/Cd pipeline details 
-
-**requirements.txt:**<details>
+**requirements.txt:**
 Lists the dependencies needed to run the project.
-
-**exception.py**<details>
+**exception.py**
 Defines custom exceptions for error handling in the project.
-
-**logger.py**<details>
+**logger.py**
 Handles logging functionality for tracking events and errors.
-
-**setup.py**<details>
+**setup.py**
 Configures the package setup and installation requirements.
-
-**templates/:**<details>
+**templates/:**
 Contains HTML files for the project’s frontend (e.g., for web applications).
 
 Each folder in the project includes an __init__.py file, marking them as Python packages for modular organization. This allows easy imports of components 
@@ -78,8 +65,29 @@ Each folder in the project includes an __init__.py file, marking them as Python 
 - http://127.0.0.1:5000/
 - http://localhost:5000/
 
-### Deployment Steps
+### Deployment Steps CI/CD pipeline using ECR and EC2 in AWS
 - Docker Build checked
 - Github Workflow
 - Iam User In AWS
 - EC2 Instance
+- ECR repository Creation
+
+### Docker Setup In EC2 commands to be Executed in EC2 Console
+**Optional**
+- sudo apt-get update -y
+- sudo apt-get upgrade
+**Required**
+- curl -fsSL https://get.docker.com -o get-docker.sh
+- sudo sh get-docker.sh
+- sudo usermod -aG docker ubuntu
+- newgrp docker
+
+**Github: Configure EC2 as self hosted runner**
+- Settings -> Actions -> Runners -> New self-hosted runner -> linux
+(copy the commands in the dropdown in the EC2 console)
+
+**Github: Secrets and Variable**
+add repository secrets
+
+**Code run in Public IPv4 address**
+
