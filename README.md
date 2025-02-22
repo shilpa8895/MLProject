@@ -8,17 +8,16 @@ The data for this project is sourced from : https://www.kaggle.com/datasets/spsc
 
 #### Dataset Overview:
 The dataset includes the following features:
+- Gender 
+- Race/Ethnicity 
+- Parental Level of Education 
+- Lunch 
+- Test Preparation Course 
+- reading score
+- writing score\n
+- Math Score (target variable)
 
-Gender
-Race/Ethnicity
-Parental Level of Education
-Lunch
-Test Preparation Course
-reading score
-writing score
-Math Score (target variable)
-
-####Code Structure
+#### Code Structure
 
 The code is organized as follows:
 
@@ -30,32 +29,33 @@ The code is organized as follows:
 - model_trainer.py: The Model Trainer component trains various regression models using ensemble technique (including Random Forest, Decision Tree, XGBoost, and CatBoost) using the provided training and testing data. It evaluates each model's performance and selects the best-performing model based on the R² score. The best model is then saved as a pickle file for later use in prediction tasks. The R² score of the best model on the test data is returned to assess its performance.
 
 **pipeline/:**
-- prediction.py: Handles the prediction tasks based on the trained model.
+prediction.py: Handles the prediction tasks based on the trained model.
+
 **artifacts/:**
  Stores the trained model in .pkl format and the train,test and preprocessed data csv files for deployment.
 
-**frontend/:**
-app.py: The main entry point for the Flask application, running on port 8080.
+**app.py:**
+The main entry point for the Flask application, running on port 8080.
 
 **Dockerfile:**
- Containerizes the application using Docker for easy deployment.
+Containerizes the application using Docker for easy deployment.
 
 **Github workflows:**
- contains CI/Cd pipeline details 
+Contains CI/Cd pipeline details 
 
- **requirements.txt:**
- Lists the dependencies needed to run the project.
+**requirements.txt:**
+Lists the dependencies needed to run the project.
 
- **exception.py**
- Defines custom exceptions for error handling in the project.
+**exception.py**
+Defines custom exceptions for error handling in the project.
 
- **logger.py**
- Handles logging functionality for tracking events and errors.
+**logger.py**
+Handles logging functionality for tracking events and errors.
 
- ***setup.py**
- Configures the package setup and installation requirements.
+**setup.py**
+Configures the package setup and installation requirements.
 
- **templates/:**
- Contains HTML files for the project’s frontend (e.g., for web applications).
+**templates/:**
+Contains HTML files for the project’s frontend (e.g., for web applications).
 
- - Each folder in the project includes an __init__.py file, marking them as Python packages for modular organization. This allows easy imports of components 
+- Each folder in the project includes an __init__.py file, marking them as Python packages for modular organization. This allows easy imports of components 
