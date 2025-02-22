@@ -17,56 +17,56 @@ The dataset includes the following features:
 - writing score\n
 - Math Score (target variable)
 
-#### Code Structure
+#### Code Structure <details>
 
 The code is organized as follows:
 
-**src/:**
+**src/:**<details>
 - data_ingestion.py: Loads raw data, splits it into training and testing sets, and saves them for use in the machine learning pipeline.
 
 - data_transformation.py: Preprocesses numerical and categorical features using pipelines, applies transformations to both training and test data, and saves the preprocessing object for future use.
 
 - model_trainer.py: Trains and evaluates various regression models, selects the best-performing model based on R² score, and saves it for future predictions.
 
-**pipeline/:**
+**pipeline/:**<details>
 prediction.py: Handles the prediction tasks based on the trained model.
 
-**artifacts/:**
+**artifacts/:**<details>
  Stores the trained model in .pkl format and the train,test and preprocessed data csv files for deployment.
 
-**app.py:**
+**app.py:**<details>
 The main entry point for the Flask application, running on port 8080.
 
-**Dockerfile:**
+**Dockerfile:**<details>
 Containerizes the application using Docker for easy deployment.
 
-**Github workflows:**
+**Github workflows:**<details>
 Contains CI/Cd pipeline details 
 
-**requirements.txt:**
+**requirements.txt:**<details>
 Lists the dependencies needed to run the project.
 
-**exception.py**
+**exception.py**<details>
 Defines custom exceptions for error handling in the project.
 
-**logger.py**
+**logger.py**<details>
 Handles logging functionality for tracking events and errors.
 
-**setup.py**
+**setup.py**<details>
 Configures the package setup and installation requirements.
 
-**templates/:**
+**templates/:**<details>
 Contains HTML files for the project’s frontend (e.g., for web applications).
 
 Each folder in the project includes an __init__.py file, marking them as Python packages for modular organization. This allows easy imports of components 
 
 **Run Code**
-python app.py
+- python app.py
 
 **GitHub Actions**
 - git status
 - git add .
-- git commit -m '<details>'
+- git commit -m 'text'
 - git push -u origin main
 
 **Docker Local**
